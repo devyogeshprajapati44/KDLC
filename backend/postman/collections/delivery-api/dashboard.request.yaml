@@ -1,0 +1,11 @@
+$kind: http-request
+url: http://localhost:5000/api/admin/dashboard
+method: GET
+headers:
+  Accept: application/json
+  Content-Type: application/json
+auth:
+  type: bearer
+  credentials:
+    token: "{{supabase_service_role_api_key_0t0r}}"
+order: 4206850656153168

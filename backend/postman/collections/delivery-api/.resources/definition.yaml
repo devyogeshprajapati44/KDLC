@@ -1,0 +1,8 @@
+$kind: collection
+variables:
+  - key: json_web_token_17hy
+    secret: true
+    disabled: false
+  - key: supabase_service_role_api_key_0t0r
+    secret: true
+    disabled: false

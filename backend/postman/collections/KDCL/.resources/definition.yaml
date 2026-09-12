@@ -1,0 +1,36 @@
+$kind: collection
+name: KDCL
+variables:
+  - key: json_web_token_09xj
+    secret: true
+    disabled: false
+  - key: supabase_service_role_api_key_03it
+    secret: true
+    disabled: false
+  - key: json_web_token_0jwk
+    secret: true
+    disabled: false
+  - key: bearer_token_0pd8
+    secret: true
+    disabled: false
+  - key: bearer_token_13la
+    secret: true
+    disabled: false
+  - key: json_web_token_0n9v
+    secret: true
+    disabled: false
+  - key: bearer_token_11er
+    secret: true
+    disabled: false
+  - key: supabase_service_role_api_key_1au9
+    secret: true
+    disabled: false
+  - key: bearer_token_06lo
+    secret: true
+    disabled: false
+  - key: json_web_token_0mg9
+    secret: true
+    disabled: false
+  - key: supabase_service_role_api_key_0mg9
+    secret: true
+    disabled: false

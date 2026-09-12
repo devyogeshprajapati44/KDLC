@@ -1,0 +1,8 @@
+$kind: http-request
+name: shipments
+url: http://localhost:5000/api/shipments
+method: GET
+headers:
+  Accept: application/json
+  Content-Type: application/json
+order: 4051599455057448

@@ -1,0 +1,91 @@
+$kind: http-request
+name: product
+url: http://localhost:5000/api/v1/products
+method: POST
+headers:
+  - key: Accept
+    value: application/json
+    disabled: false
+  - key: Content-Type
+    value: application/json
+    disabled: true
+  - key: Authorization
+    value: "{{bearer_token_06lo}}"
+    disabled: false
+body:
+  type: formdata
+  content:
+    - type: text
+      key: name
+      value: iPhone 15 Pro
+      description: ""
+      disabled: false
+    - type: text
+      key: description
+      value: Latest Apple flagship phone
+      description: ""
+      disabled: false
+    - type: text
+      key: price
+      value: "12999"
+      description: ""
+      disabled: false
+    - type: text
+      key: category
+      value: Mobile
+      description: ""
+      disabled: false
+    - type: text
+      key: brand
+      value: Apple
+      description: ""
+      disabled: false
+    - type: text
+      key: stock
+      value: "10"
+      description: ""
+      disabled: false
+    - type: file
+      key: images
+      src:
+        - /D:/KDLC/uploads/1777446691943-motorolla.png
+      description: ""
+      disabled: false
+    - type: text
+      key: discount
+      value: "10"
+      description: ""
+      disabled: false
+    - type: text
+      key: isFeatured
+      value: "true"
+      description: ""
+      disabled: false
+    - type: text
+      key: warranty
+      value: 1 Year Apple Warranty
+      description: ""
+      disabled: false
+    - type: text
+      key: manufacturerInfo
+      value: Manufactured by Apple Inc, California, USA
+      description: ""
+      disabled: false
+    - type: text
+      key: highlights
+      value: '["A17 Pro chip","Titanium body"]'
+      description: ""
+      disabled: false
+    - type: text
+      key: specs
+      value: '{"ram":"8GB","storage":"256GB"}'
+      description: ""
+      disabled: false
+    - type: text
+      key: country
+      value: USA
+      description: ""
+      disabled: false
+auth:
+  type: noauth
+order: 4312196912191817

@@ -1,0 +1,11 @@
+$kind: http-request
+name: getallorders
+url: http://localhost:5000/api/orders/all-orders
+method: GET
+headers:
+  Accept: application/json
+auth:
+  type: bearer
+  credentials:
+    token: "{{json_web_token_09xj}}"
+order: 4455622857203846

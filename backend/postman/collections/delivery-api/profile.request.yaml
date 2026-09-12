@@ -1,0 +1,11 @@
+$kind: http-request
+url: http://localhost:5000/api/auth/profile
+method: GET
+headers:
+  Accept: application/json
+  Content-Type: application/json
+auth:
+  type: bearer
+  credentials:
+    token: "{{json_web_token_17hy}}"
+order: 3973240900662489

@@ -1,0 +1,20 @@
+$kind: http-request
+url: http://localhost:5000/api/auth/register
+method: POST
+headers:
+  Accept: application/json
+  Content-Type: application/json
+body:
+  type: json
+  content: "{\r
+
+    \    \"name\": \"Rahul Kumar\",\r
+
+    \    \"email\": \"Rahul12@gmail.com\",\r
+
+    \    \"phone\": \"9876543225\",\r
+
+    \    \"password\": \"Admin@123\"\r
+
+    }"
+order: 1788259268253

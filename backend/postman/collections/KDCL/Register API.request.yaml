@@ -1,0 +1,27 @@
+$kind: http-request
+name: Register API
+url: http://localhost:5000/api/auth/register
+method: POST
+headers:
+  - key: Accept
+    value: application/json
+    disabled: false
+  - key: Content-Type
+    value: multipart/form-data; boundary=----WebKitFormBoundaryxxxx
+    disabled: true
+body:
+  type: json
+  content: "{\r
+
+    \  \"name\": \"Admin\",\r
+
+    \  \"email\": \"admin@admin.com\",\r
+
+    \  \"password\": \"123456\",\r
+
+    \  \"phone\": \"8299259095\",\r
+
+    \  \"address\": \"C-46, C Block, Sector 51, Noida, Uttar Pradesh 201301\"\r
+
+    }"
+order: 4383589243094590

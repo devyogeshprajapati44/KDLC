@@ -1,0 +1,8 @@
+$kind: http-request
+name: inventory
+url: http://localhost:5000/api/inventory
+method: GET
+headers:
+  Accept: application/json
+  Content-Type: application/json
+order: 2746900032418051

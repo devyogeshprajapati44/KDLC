@@ -1,0 +1,8 @@
+$kind: http-request
+name: New Request
+url: http://localhost:5000/api/v1/products
+method: GET
+headers:
+  Accept: application/json
+  Authorization: Bearer {{supabase_service_role_api_key_0mg9}}
+order: 4503215630624280

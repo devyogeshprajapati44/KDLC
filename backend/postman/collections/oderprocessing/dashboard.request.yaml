@@ -1,0 +1,8 @@
+$kind: http-request
+name: dashboard
+url: http://localhost:5000/api/dashboard
+method: GET
+headers:
+  Accept: application/json
+  Content-Type: application/json
+order: 4472163262113458

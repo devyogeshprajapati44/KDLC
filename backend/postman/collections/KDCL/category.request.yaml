@@ -1,0 +1,35 @@
+$kind: http-request
+name: category
+url: http://localhost:5000/api/category/add
+method: POST
+headers:
+  Accept: application/json
+  Content-Type: multipart/form-data; boundary=------------------------xxxxx
+  Authorization: Bearer {{json_web_token_0jwk}}
+body:
+  type: formdata
+  content:
+    - type: text
+      key: name
+      value: Teample
+      description: ""
+      disabled: false
+    - type: text
+      key: parentId
+      value: "null"
+      description: ""
+      disabled: false
+    - type: text
+      key: type
+      value: product
+      description: ""
+      disabled: false
+    - type: file
+      key: categoryImage
+      src:
+        - /D:/xampp/htdocs/img/3faf132f.jpg
+      description: ""
+      disabled: false
+auth:
+  type: noauth
+order: 4485118715123509

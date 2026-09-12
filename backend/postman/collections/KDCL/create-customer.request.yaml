@@ -1,0 +1,26 @@
+$kind: http-request
+name: create-customer
+url: http://localhost:5000/api/v1/user/create-customer
+method: POST
+headers:
+  Accept: application/json
+  Content-Type: application/json
+  Authorization: Bearer {{json_web_token_0jwk}}
+body:
+  type: json
+  content: "{\r
+
+    \  \"name\": \"Yogesh\",\r
+
+    \  \"email\": \"Amkita@admin.com\",\r
+
+    \  \"password\": \"123456\",\r
+
+    \  \"phone\": \"8299259095\",\r
+
+    \  \"address\": \"C-46, C Block, Sector 51, Noida, Uttar Pradesh 201301\"\r
+
+    }"
+auth:
+  type: noauth
+order: 4486569802230613

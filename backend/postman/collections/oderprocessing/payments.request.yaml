@@ -1,0 +1,8 @@
+$kind: http-request
+name: payments
+url: http://localhost:5000/api/payments
+method: GET
+headers:
+  Accept: application/json
+  Content-Type: application/json
+order: 3450193511549517
