@@ -1,0 +1,474 @@
+/* ===============================
+   Dashboard Main
+================================ */
+
+.dashboard-page {
+    padding: 35px;
+    background: #f7f8fc;
+    min-height: calc(100vh - 80px);
+}
+
+
+/* ===============================
+   Welcome Header
+================================ */
+
+.dashboard-title {
+    margin-bottom: 35px;
+}
+
+.dashboard-title h2 {
+    font-size: 32px;
+    font-weight: 700;
+    color: #111827;
+    margin-bottom: 8px;
+}
+
+.dashboard-title span {
+    font-size: 30px;
+}
+
+.dashboard-title p {
+    color: #64748b;
+    font-size: 15px;
+}
+
+
+/* ===============================
+   Cards Grid
+================================ */
+
+.dashboard-grid {
+    display: grid;
+    grid-template-columns: repeat(4, 1fr);
+    gap: 25px;
+}
+
+
+/* ===============================
+   Stat Card
+================================ */
+
+.stat-card {
+
+    height: 230px;
+
+    border-radius: 24px;
+
+    padding: 28px;
+
+    position: relative;
+
+    overflow: hidden;
+
+    display:flex;
+
+    flex-direction:column;
+
+    justify-content:space-between;
+
+    transition: .3s ease;
+
+}
+
+
+.stat-card:hover {
+
+    transform: translateY(-6px);
+
+}
+
+
+.card-top {
+
+    display:flex;
+
+    justify-content:space-between;
+
+    align-items:center;
+
+}
+
+
+.icon-box {
+
+    width:55px;
+
+    height:55px;
+
+    border-radius:18px;
+
+    display:flex;
+
+    align-items:center;
+
+    justify-content:center;
+
+    color:white;
+
+    font-size:25px;
+
+}
+
+
+.growth {
+
+    font-size:14px;
+
+    font-weight:600;
+
+    color:#334155;
+
+}
+
+
+.growth i {
+
+    margin-right:5px;
+
+}
+
+
+
+/* Bottom */
+
+
+.card-bottom h6 {
+
+    font-size:16px;
+
+    color:#475569;
+
+    margin-bottom:10px;
+
+    font-weight:600;
+
+}
+
+
+.card-bottom h2 {
+
+    font-size:38px;
+
+    font-weight:700;
+
+    color:#0f172a;
+
+}
+
+
+/* ===============================
+   Card Colors
+================================ */
+
+
+.blue-card {
+
+    background:
+    radial-gradient(circle at top left,
+    rgba(255,255,255,.8),
+    transparent 40%),
+    #dbeafe;
+
+}
+
+
+.purple-card {
+
+    background:
+    radial-gradient(circle at top left,
+    rgba(255,255,255,.8),
+    transparent 40%),
+    #f3e8ff;
+
+}
+
+
+.yellow-card {
+
+    background:
+    radial-gradient(circle at top left,
+    rgba(255,255,255,.8),
+    transparent 40%),
+    #fef3c7;
+
+}
+
+
+.pink-card {
+
+    background:
+    radial-gradient(circle at top left,
+    rgba(255,255,255,.8),
+    transparent 40%),
+    #ffe4e6;
+
+}
+
+
+
+/* dotted effect */
+
+
+.stat-card::after {
+
+    content:"";
+
+    position:absolute;
+
+    width:250px;
+
+    height:250px;
+
+    right:-80px;
+
+    bottom:-100px;
+
+    background-image:
+
+    radial-gradient(#ffffff 2px,transparent 2px);
+
+    background-size:15px 15px;
+
+    opacity:.5;
+
+}
+
+
+
+/* ===============================
+   Bottom Section
+================================ */
+
+
+.dashboard-bottom {
+
+    display:grid;
+
+    grid-template-columns: 1fr 1fr;
+
+    gap:30px;
+
+    margin-top:35px;
+
+}
+
+
+
+/* Recent Orders */
+
+
+.recent-orders,
+
+.activity-card {
+
+
+    background:white;
+
+    border-radius:24px;
+
+    padding:30px;
+
+    box-shadow:
+
+    0 10px 30px rgba(0,0,0,.05);
+
+}
+
+
+.section-title h4,
+
+.activity-card h4 {
+
+    font-size:20px;
+
+    font-weight:700;
+
+    margin-bottom:25px;
+
+    color:#111827;
+
+}
+
+
+
+/* Orders */
+
+
+.order-item {
+
+
+    display:flex;
+
+    justify-content:space-between;
+
+    align-items:center;
+
+    padding:18px 0;
+
+    border-bottom:1px solid #f1f5f9;
+
+}
+
+
+
+.order-item:last-child{
+
+    border-bottom:none;
+
+}
+
+
+.order-item h6 {
+
+    margin:0;
+
+    font-size:15px;
+
+    color:#1e293b;
+
+}
+
+
+.order-item small {
+
+    color:#94a3b8;
+
+}
+
+
+.order-item strong {
+
+    color:#4f46e5;
+
+}
+
+
+
+/* Empty */
+
+
+.empty-box {
+
+    height:150px;
+
+    display:flex;
+
+    align-items:center;
+
+    justify-content:center;
+
+    flex-direction:column;
+
+    color:#94a3b8;
+
+}
+
+
+.empty-box i {
+
+    font-size:35px;
+
+}
+
+
+
+/* ===============================
+   Summary
+================================ */
+
+
+.summary-row {
+
+
+    display:flex;
+
+    justify-content:space-between;
+
+    padding:16px 0;
+
+    border-bottom:1px solid #f1f5f9;
+
+    color:#64748b;
+
+}
+
+
+.summary-row strong {
+
+    color:#111827;
+
+}
+
+
+
+/* ===============================
+   Responsive
+================================ */
+
+
+@media(max-width:1200px){
+
+    .dashboard-grid {
+
+        grid-template-columns:repeat(2,1fr);
+
+    }
+
+}
+
+
+
+@media(max-width:768px){
+
+
+    .dashboard-page {
+
+        padding:20px;
+
+    }
+
+
+    .dashboard-grid {
+
+        grid-template-columns:1fr;
+
+    }
+
+
+    .dashboard-bottom {
+
+        grid-template-columns:1fr;
+
+    }
+
+
+    .dashboard-title h2 {
+
+        font-size:25px;
+
+    }
+
+
+}
+
+
+@media(max-width:480px){
+
+
+    .stat-card {
+
+        height:200px;
+
+        padding:22px;
+
+    }
+
+
+    .card-bottom h2 {
+
+        font-size:32px;
+
+    }
+
+}

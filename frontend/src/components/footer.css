@@ -1,0 +1,45 @@
+/* ===== Footer — modern redesign ===== */
+
+.app-footer {
+  margin-top: auto;
+  background: #ffffff;
+  border-top: 1px solid #eceef4;
+  padding: 16px clamp(16px, 4vw, 48px);
+}
+
+.footer-inner {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  gap: 10px;
+  flex-wrap: wrap;
+  font-family: "Inter", -apple-system, BlinkMacSystemFont, "Segoe UI", sans-serif;
+}
+
+.footer-brand {
+  font-size: 13px;
+  font-weight: 700;
+  letter-spacing: 0.01em;
+  color: #14162b;
+}
+
+.footer-dot {
+  width: 4px;
+  height: 4px;
+  border-radius: 50%;
+  background: #c7cad9;
+}
+
+.footer-text {
+  font-size: 13px;
+  font-weight: 500;
+  color: #6b7086;
+}
+
+@media (max-width: 480px) {
+  .footer-dot { display: none; }
+  .footer-inner {
+    flex-direction: column;
+    gap: 2px;
+  }
+}

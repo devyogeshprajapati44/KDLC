@@ -1,0 +1,650 @@
+@import url('https://fonts.googleapis.com/css2?family=Barlow+Condensed:wght@500;600;700&family=Inter:wght@400;500;600&family=JetBrains+Mono:wght@400;500;600&display=swap');
+
+.tracking-page {
+  --ink: #1c2333;
+  --ink-soft: #3a4256;
+  --paper: #f3ede0;
+  --paper-card: #fffdf6;
+  --line: #ddd3ba;
+  --line-strong: #c9bd9c;
+  --text-muted: #7a7364;
+  --stamp-amber: #b9711f;
+  --stamp-amber-bg: #f6e6cd;
+  --stamp-green: #2f6b4f;
+  --stamp-green-bg: #dfeee4;
+  --stamp-blue: #2a4a7a;
+  --stamp-blue-bg: #e1e9f4;
+  --stamp-red: #a63a2e;
+  --stamp-red-bg: #f3ded9;
+  --stamp-gray: #5c5648;
+  --stamp-gray-bg: #e9e3d2;
+  --radius: 10px;
+  --shadow: 0 1px 2px rgba(28, 35, 51, 0.06), 0 8px 24px -12px rgba(28, 35, 51, 0.18);
+
+  min-height: 100vh;
+  width: 100%;
+  background:
+    radial-gradient(ellipse at top left, rgba(185, 113, 31, 0.05), transparent 55%),
+    var(--paper);
+  background-image:
+    radial-gradient(rgba(28, 35, 51, 0.045) 1px, transparent 1px),
+    radial-gradient(ellipse at top left, rgba(185, 113, 31, 0.05), transparent 55%),
+    var(--paper);
+  background-size: 22px 22px, auto, auto;
+  font-family: 'Inter', -apple-system, BlinkMacSystemFont, sans-serif;
+  color: var(--ink);
+  padding: 40px 20px 80px;
+  box-sizing: border-box;
+}
+
+.tracking-page *,
+.tracking-page *::before,
+.tracking-page *::after {
+  box-sizing: border-box;
+}
+
+.tracking-container {
+  max-width: 760px;
+  margin: 0 auto;
+  display: flex;
+  flex-direction: column;
+  gap: 20px;
+}
+
+/* ---------- shared card shell ---------- */
+.tracking-header-card,
+.tracking-product-card,
+.tracking-cancelled-card,
+.tracking-timeline-card,
+.tracking-address-card,
+.tracking-error-card {
+  background: var(--paper-card);
+  border: 1px solid var(--line);
+  border-radius: var(--radius);
+  box-shadow: var(--shadow);
+}
+
+/* ---------- eyebrow ---------- */
+.tracking-eyebrow {
+  display: inline-flex;
+  align-items: center;
+  gap: 6px;
+  font-family: 'Barlow Condensed', sans-serif;
+  font-weight: 600;
+  font-size: 13px;
+  letter-spacing: 0.14em;
+  text-transform: uppercase;
+  color: var(--stamp-amber);
+}
+
+.tracking-eyebrow i {
+  font-size: 13px;
+}
+
+/* ---------- header / waybill strip ---------- */
+.tracking-header-card {
+  padding: 24px 28px 20px;
+}
+
+.tracking-back-btn {
+  display: inline-flex;
+  align-items: center;
+  gap: 8px;
+  background: none;
+  border: none;
+  color: var(--text-muted);
+  font-family: 'Inter', sans-serif;
+  font-size: 13.5px;
+  font-weight: 500;
+  cursor: pointer;
+  padding: 0 0 20px;
+  transition: color 0.15s ease;
+}
+
+.tracking-back-btn:hover {
+  color: var(--ink);
+}
+
+.tracking-header-content {
+  display: flex;
+  align-items: flex-start;
+  justify-content: space-between;
+  gap: 20px;
+  flex-wrap: wrap;
+}
+
+.tracking-header-main h1 {
+  font-family: 'Barlow Condensed', sans-serif;
+  font-weight: 700;
+  font-size: 34px;
+  letter-spacing: -0.01em;
+  margin: 6px 0 14px;
+  color: var(--ink);
+}
+
+.tracking-id-row {
+  display: inline-flex;
+  align-items: baseline;
+  gap: 8px;
+  background: var(--paper);
+  border: 1px dashed var(--line-strong);
+  border-radius: 6px;
+  padding: 6px 12px;
+}
+
+.tracking-id-label {
+  font-size: 11px;
+  text-transform: uppercase;
+  letter-spacing: 0.08em;
+  color: var(--text-muted);
+}
+
+.tracking-id-value {
+  font-family: 'JetBrains Mono', monospace;
+  font-size: 13.5px;
+  font-weight: 500;
+  color: var(--ink-soft);
+}
+
+/* stamp badge — looks like an ink customs stamp */
+.tracking-stamp {
+  flex-shrink: 0;
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+  border: 2.5px solid currentColor;
+  border-radius: 8px;
+  padding: 9px 18px;
+  transform: rotate(-4deg);
+}
+
+.tracking-stamp-text {
+  font-family: 'Barlow Condensed', sans-serif;
+  font-weight: 700;
+  font-size: 15px;
+  letter-spacing: 0.12em;
+  text-transform: uppercase;
+}
+
+.tracking-stamp--booked,
+.tracking-stamp--processing {
+  color: var(--stamp-amber);
+  background: var(--stamp-amber-bg);
+}
+
+.tracking-stamp--shipped {
+  color: var(--stamp-blue);
+  background: var(--stamp-blue-bg);
+}
+
+.tracking-stamp--delivered {
+  color: var(--stamp-green);
+  background: var(--stamp-green-bg);
+}
+
+.tracking-stamp--cancelled {
+  color: var(--stamp-red);
+  background: var(--stamp-red-bg);
+}
+
+/* decorative barcode divider, ties the header to a courier waybill */
+.tracking-barcode {
+  margin-top: 20px;
+  padding-top: 16px;
+  border-top: 1px dashed var(--line-strong);
+  display: flex;
+  align-items: flex-end;
+  gap: 2px;
+  height: 26px;
+  opacity: 0.85;
+}
+
+.tracking-barcode .bar {
+  flex: 1;
+  background: var(--ink);
+  opacity: 0.35;
+  height: 55%;
+  border-radius: 1px;
+}
+
+.tracking-barcode .bar--wide {
+  height: 100%;
+  opacity: 0.55;
+}
+
+/* ---------- product card ---------- */
+.tracking-product-card {
+  padding: 18px 24px;
+  display: flex;
+  align-items: center;
+  gap: 18px;
+}
+
+.tracking-product-image {
+  width: 68px;
+  height: 68px;
+  flex-shrink: 0;
+  border-radius: 8px;
+  border: 1px dashed var(--line-strong);
+  background: var(--paper);
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  overflow: hidden;
+  font-size: 24px;
+  color: var(--text-muted);
+}
+
+.tracking-product-image img {
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+}
+
+.tracking-product-info {
+  flex: 1;
+  min-width: 0;
+}
+
+.tracking-product-eyebrow {
+  display: block;
+  font-family: 'Barlow Condensed', sans-serif;
+  font-weight: 600;
+  font-size: 11.5px;
+  letter-spacing: 0.1em;
+  text-transform: uppercase;
+  color: var(--text-muted);
+  margin-bottom: 3px;
+}
+
+.tracking-product-info h2 {
+  font-family: 'Inter', sans-serif;
+  font-size: 17px;
+  font-weight: 600;
+  margin: 0 0 4px;
+  color: var(--ink);
+  white-space: nowrap;
+  overflow: hidden;
+  text-overflow: ellipsis;
+}
+
+.tracking-product-qty {
+  font-size: 13px;
+  color: var(--text-muted);
+  margin: 0;
+}
+
+.tracking-product-price {
+  text-align: right;
+  flex-shrink: 0;
+  padding-left: 16px;
+  border-left: 1px dashed var(--line-strong);
+}
+
+.tracking-product-price h3 {
+  font-family: 'JetBrains Mono', monospace;
+  font-size: 18px;
+  font-weight: 600;
+  margin: 2px 0 0;
+  color: var(--ink);
+}
+
+/* ---------- cancelled card ---------- */
+.tracking-cancelled-card {
+  padding: 26px 28px;
+  display: flex;
+  align-items: center;
+  gap: 20px;
+  border-color: rgba(166, 58, 46, 0.35) !important;
+  background: linear-gradient(var(--stamp-red-bg), var(--stamp-red-bg)), var(--paper-card);
+}
+
+.cancelled-icon {
+  width: 52px;
+  height: 52px;
+  border-radius: 50%;
+  background: var(--paper-card);
+  border: 2px solid var(--stamp-red);
+  color: var(--stamp-red);
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  font-size: 22px;
+  flex-shrink: 0;
+}
+
+.tracking-cancelled-card h2 {
+  font-family: 'Barlow Condensed', sans-serif;
+  font-size: 21px;
+  font-weight: 700;
+  color: var(--stamp-red);
+  margin: 0 0 4px;
+}
+
+.tracking-cancelled-card p {
+  margin: 0 0 6px;
+  color: var(--ink-soft);
+  font-size: 14px;
+}
+
+.tracking-cancelled-card small {
+  color: var(--text-muted);
+  font-family: 'JetBrains Mono', monospace;
+  font-size: 12px;
+}
+
+/* ---------- timeline / route ---------- */
+.tracking-timeline-card {
+  padding: 24px 28px 28px;
+}
+
+.tracking-timeline-header {
+  display: flex;
+  align-items: flex-start;
+  justify-content: space-between;
+  gap: 16px;
+  margin-bottom: 22px;
+  flex-wrap: wrap;
+}
+
+.tracking-timeline-header h2 {
+  font-family: 'Barlow Condensed', sans-serif;
+  font-weight: 700;
+  font-size: 22px;
+  margin: 4px 0 0;
+  color: var(--ink);
+}
+
+.tracking-progress {
+  font-family: 'JetBrains Mono', monospace;
+  font-size: 12px;
+  color: var(--text-muted);
+  background: var(--paper);
+  border: 1px solid var(--line);
+  border-radius: 20px;
+  padding: 5px 12px;
+  white-space: nowrap;
+}
+
+.tracking-route {
+  display: flex;
+  flex-direction: column;
+}
+
+.tracking-item {
+  display: flex;
+  gap: 16px;
+}
+
+.tracking-step-left {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  flex-shrink: 0;
+}
+
+.tracking-node {
+  width: 34px;
+  height: 34px;
+  border-radius: 50%;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  font-size: 14px;
+  background: var(--paper);
+  border: 2px solid var(--line-strong);
+  color: var(--text-muted);
+  transition: all 0.2s ease;
+}
+
+.tracking-item.completed .tracking-node {
+  background: var(--stamp-green);
+  border-color: var(--stamp-green);
+  color: #fff;
+}
+
+.tracking-item.active .tracking-node {
+  background: var(--paper-card);
+  border-color: var(--stamp-amber);
+  color: var(--stamp-amber);
+  box-shadow: 0 0 0 4px var(--stamp-amber-bg);
+}
+
+.tracking-route-line {
+  width: 2px;
+  flex: 1;
+  min-height: 34px;
+  background-image: linear-gradient(var(--line-strong), var(--line-strong));
+  background-repeat: repeat-y;
+  background-size: 2px 6px;
+  margin: 2px 0;
+}
+
+.tracking-route-line.filled {
+  background-image: linear-gradient(var(--stamp-green), var(--stamp-green));
+  background-size: 2px 100%;
+}
+
+.tracking-step-content {
+  flex: 1;
+  padding-bottom: 26px;
+  min-width: 0;
+}
+
+.tracking-item:last-child .tracking-step-content {
+  padding-bottom: 2px;
+}
+
+.tracking-step-heading {
+  display: flex;
+  align-items: center;
+  gap: 10px;
+  flex-wrap: wrap;
+}
+
+.tracking-step-content h3 {
+  font-family: 'Inter', sans-serif;
+  font-size: 15px;
+  font-weight: 600;
+  margin: 0;
+  color: var(--text-muted);
+}
+
+.tracking-item.completed .tracking-step-content h3,
+.tracking-item.active .tracking-step-content h3 {
+  color: var(--ink);
+}
+
+.tracking-step-content p {
+  font-size: 13.5px;
+  color: var(--text-muted);
+  margin: 3px 0 0;
+}
+
+.tracking-step-content small {
+  display: inline-flex;
+  align-items: center;
+  gap: 5px;
+  margin-top: 6px;
+  font-family: 'JetBrains Mono', monospace;
+  font-size: 11.5px;
+  color: var(--text-muted);
+}
+
+.current-step-label {
+  font-family: 'Barlow Condensed', sans-serif;
+  font-weight: 600;
+  font-size: 11px;
+  letter-spacing: 0.08em;
+  text-transform: uppercase;
+  color: var(--stamp-amber);
+  background: var(--stamp-amber-bg);
+  border-radius: 4px;
+  padding: 2px 8px;
+  position: relative;
+}
+
+.current-step-label::before {
+  content: "";
+  display: inline-block;
+  width: 6px;
+  height: 6px;
+  border-radius: 50%;
+  background: var(--stamp-amber);
+  margin-right: 5px;
+  animation: pulse 1.6s ease-in-out infinite;
+}
+
+@keyframes pulse {
+  0%, 100% { opacity: 1; }
+  50% { opacity: 0.35; }
+}
+
+/* ---------- address card, styled like a shipping label ---------- */
+.tracking-address-card {
+  overflow: hidden;
+}
+
+.tracking-address-tab {
+  display: flex;
+  align-items: center;
+  gap: 7px;
+  background: var(--ink);
+  color: var(--paper);
+  font-family: 'Barlow Condensed', sans-serif;
+  font-weight: 600;
+  font-size: 12.5px;
+  letter-spacing: 0.1em;
+  text-transform: uppercase;
+  padding: 9px 24px;
+}
+
+.tracking-address-body {
+  padding: 18px 24px 22px;
+  border-top: 1px dashed var(--line-strong);
+}
+
+.tracking-address-body h3 {
+  font-family: 'Inter', sans-serif;
+  font-size: 16px;
+  font-weight: 600;
+  margin: 0 0 6px;
+  color: var(--ink);
+}
+
+.tracking-address-body p {
+  font-size: 13.5px;
+  color: var(--ink-soft);
+  line-height: 1.5;
+  margin: 0 0 8px;
+}
+
+.tracking-address-body small {
+  display: inline-flex;
+  align-items: center;
+  gap: 6px;
+  font-family: 'JetBrains Mono', monospace;
+  font-size: 12.5px;
+  color: var(--text-muted);
+}
+
+/* ---------- error state ---------- */
+.tracking-error-card {
+  max-width: 420px;
+  margin: 80px auto 0;
+  padding: 40px 32px;
+  text-align: center;
+}
+
+.tracking-error-stamp {
+  width: 56px;
+  height: 56px;
+  margin: 0 auto 16px;
+  border-radius: 50%;
+  border: 2px solid var(--stamp-red);
+  color: var(--stamp-red);
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  font-size: 24px;
+}
+
+.tracking-error-card h2 {
+  font-family: 'Barlow Condensed', sans-serif;
+  font-size: 22px;
+  margin: 0 0 8px;
+  color: var(--ink);
+}
+
+.tracking-error-card p {
+  font-size: 14px;
+  color: var(--text-muted);
+  margin: 0 0 20px;
+}
+
+.tracking-btn-primary {
+  display: inline-flex;
+  align-items: center;
+  gap: 8px;
+  background: var(--ink);
+  color: var(--paper);
+  border: none;
+  border-radius: 7px;
+  padding: 10px 20px;
+  font-family: 'Inter', sans-serif;
+  font-size: 13.5px;
+  font-weight: 500;
+  cursor: pointer;
+  transition: opacity 0.15s ease;
+}
+
+.tracking-btn-primary:hover {
+  opacity: 0.85;
+}
+
+/* ---------- responsive ---------- */
+@media (max-width: 640px) {
+  .tracking-page {
+    padding: 24px 14px 60px;
+  }
+
+  .tracking-header-card {
+    padding: 20px 18px 16px;
+  }
+
+  .tracking-header-main h1 {
+    font-size: 28px;
+  }
+
+  .tracking-header-content {
+    flex-direction: column;
+  }
+
+  .tracking-stamp {
+    align-self: flex-start;
+  }
+
+  .tracking-product-card {
+    flex-wrap: wrap;
+    padding: 16px 18px;
+  }
+
+  .tracking-product-price {
+    border-left: none;
+    padding-left: 0;
+    text-align: left;
+    width: 100%;
+    padding-top: 10px;
+    border-top: 1px dashed var(--line-strong);
+  }
+
+  .tracking-timeline-card {
+    padding: 20px 18px 24px;
+  }
+}
+
+@media (prefers-reduced-motion: reduce) {
+  .current-step-label::before {
+    animation: none;
+  }
+}
